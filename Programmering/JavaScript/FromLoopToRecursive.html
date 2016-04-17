@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>FROM LOOP TO RECURSION</title>
+        <meta name="description" content="An exercise on how to go from a loop to a recursive function">
+
+        <script>
+            
+            //Try to rewrite the countdown function as a recursive function instead of a while loop
+            
+            function countdown() {
+                
+                
+                
+                var countDownFrom_Text=document.getElementById('user_input').value; //Retrive the user input
+                
+                var countDownFrom_Number = parseInt(countDownFrom_Text); //Change the retrived string to integer to make it possible to compare
+                
+                document.getElementById("counter").innerHTML = "Here we go.. Countdown from " + countDownFrom_Number;
+                
+                var i = countDownFrom_Number;
+                
+                //Loop until the i variable is zero
+                while (i >= 0) {
+                        
+                    alert(i);  
+                          
+                    i--;
+                    
+                }
+                
+                 if (i <= 0) {
+                       
+                       document.getElementById("counter").innerHTML = "Finished.. Try again.." ;
+                       
+                   }
+                
+            }
+            
+            
+        </script>
+        
+    </head>
+    <body>
+
+        <h1>COUNTDOWN</h1>
+        <h2 id="counter">Wait for it!!</h2>      
+        <h3>Countdown from:</h3>
+        
+        <p>
+            
+            <input type="text" id="user_input">
+            
+          <!--
+            When the button is pressed the function named countdown is called
+        -->
+            <button type="button" onclick="countdown()">Try it</button>
+           
+        </p>
+        
+       
+    </body>
+</html>
