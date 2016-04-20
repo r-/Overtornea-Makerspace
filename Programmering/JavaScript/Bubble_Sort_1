@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Bubble Sort 1</title>
+        <meta name="description" content="An exercise on how to sort an array with Bubble sort">
+
+        <script>
+            
+            var list_to_sort = [];
+            var input_turn = 0;
+            
+            //Try to rewrite the sort function so it sort the array with bubble sort
+            
+            function sort(list_to_sort) {
+                
+                document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>Ok.. now I'm in the sort function yay.. Time to get things sorted.. Big up for BUBBLE SORT.. WOO.."; 
+// If you want to add new things but leave the old in the output_area you can just add the output_area to the output as done in the above example. Yes I know there are better ways of doing this but this is ok for now.
+                
+   
+                
+                
+          
+    //** USE BUBBLE SORT HERE TO SORT list_to_sort 
+    //** Then send it to the end of the output_area and we are done with this exercise
+  
+             
+                
+                
+   
+                
+                
+                
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            function user_input(){
+            
+                list_to_sort[input_turn]=document.getElementById('user_input').value; //Retrive the user input and put it into the array. The first will be on position 0 in the array
+                
+               
+                input_turn++ //increase the turn number
+                
+                document.getElementById("output_area").innerHTML = "Enter number " + (input_turn+1);
+                
+                
+                
+                
+                if (input_turn==5){
+                
+                document.getElementById("input_area").innerHTML = ""; //Remove the input area so no more pesky numbers are sent from the user. WE ARE FULL..
+                    
+                 document.getElementById("output_area").innerHTML = "Woohoo.. You have entered 5 numbers and now we can get going.. <br> The unsorted array: " + list_to_sort;
+                    
+                
+                sort(list_to_sort); //Send the list to the sort function
+                    
+                }
+                
+            
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+
+        <h1>Bubblesort 1</h1>
+        
+        <h2>In this exersise you will enter 5 numbers to be sorted</h2>
+        
+        <div id="output_area">
+            Enter number 1.
+        </div>
+        
+        <div id="input_area">
+            
+            <p>
+            
+                <input type="text" id="user_input">
+            
+          <!--
+            When the button is pressed the function named user_input is called
+        -->
+                <button type="button" onclick="user_input()">Submit</button>
+           
+            </p>
+        </div> 
+       
+    </body>
+</html>
