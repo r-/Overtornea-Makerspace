@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Binary Search 1</title>
+        <meta name="description" content="An exercise in binary search">
+
+        <script>
+            
+            var list_to_sort = [];
+            var input_turn = 0;
+            
+            //Try to rewrite the search function so it uses binary search instead of linear search. What is the difference between these two algorithms?
+            
+            function search_the_array() {
+                
+            
+                
+                document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>Ok.. now I'm in the search function yay.."; 
+
+                   
+                
+                var target = document.getElementById("search_input").innerHTML; //Fetch the word to search for
+                
+                document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>The search target is: " + target;
+                
+                
+                //Search algorithm start - change this to binary search
+                var result = null;
+                var value ="";
+                
+                for(i = 0; i < list_to_sort.length; i++){
+                    value = list_to_sort[i];
+                    
+                    
+                    if(value == target){
+                        result = i;
+                       
+                    break;
+                        }
+                }
+                
+                
+                if(result !== null){
+                     
+                    document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>Target has been found in the array index " + result; 
+                    
+                    
+                        }
+                else{
+                    
+                    document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>No matches for the search word " + target; 
+                    
+                }
+                     
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            function user_input(){
+            
+                list_to_sort[input_turn]=document.getElementById('user_input').value; //Retrive the user input and put it into the array. The first will be on position 0 in the array
+                
+               
+                input_turn++ //increase the turn number
+                
+                document.getElementById("output_area").innerHTML = "Enter number " + (input_turn+1);
+                
+                
+                
+                
+                if (input_turn==5){
+                
+                document.getElementById("input_area").innerHTML = ""; //Remove the input area so no more pesky numbers are sent from the user. WE ARE FULL..
+                    
+                 document.getElementById("output_area").innerHTML = "Woohoo.. You have entered 5 numbers and now we can get going.. <br> The unsorted array: " + list_to_sort;
+                    
+                  //** Javascript got a built in sort method for arrays so building you're own function for this is not really needed http://www.w3schools.com/jsref/jsref_sort.asp
+                
+                    list_to_sort.sort(); //Send the list to the sort function
+                    
+                    
+                    
+                    document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>Sorted: " + list_to_sort + "<br>Now that the list is sorted we can do some searching.."; 
+                    
+                    
+                    document.getElementById("input_area").innerHTML = "<input type='text' id='search_input'><button type='button' onclick='search_the_array()''>Search</button>"; //Inject the search gui..
+                    
+                    
+                }
+                
+            
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+
+        <h1>Binary Search 1</h1>
+        
+        <h2>In this exersise you will enter 5 numbers to be sorted and then searched</h2>
+        
+        <div id="output_area">
+            Enter number 1.
+        </div>
+        
+        <div id="input_area">
+            
+            <p>
+            
+                <input type="text" id="user_input">
+            
+          <!--
+            When the button is pressed the function named user_input is called
+        -->
+                <button type="button" onclick="user_input()">Submit</button>
+           
+            </p>
+        </div> 
+       
+    </body>
+</html>
