@@ -20,7 +20,7 @@
 
                    
                 
-                var target = document.getElementById("search_input").innerHTML; //Fetch the word to search for
+                var target = document.getElementById("search_input").value; //Fetch the word to search for
                 
                 document.getElementById("output_area").innerHTML = document.getElementById("output_area").innerHTML + "<br>The search target is: " + target;
                 
